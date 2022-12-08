@@ -1,0 +1,43 @@
+#background {
+    background: black;
+    overflow: hidden;
+}
+
+#headerLogin {
+    min-height: 100px;
+}
+
+#footerLogin {
+    min-height: 100px;
+}
+
+#bodyLogin {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#contentLogin {
+    flex: 1;
+}
+
+.error {
+    width: 240px;
+    padding-bottom: 25px;
+    padding-left: 5px;
+    display: inline-flex;
+    border: none;
+}
+
+.errorMessage {
+    color: white;
+}
+
+.noErrorMessage {
+    display: none;
+}
+
+.inputFields {
+    padding: 5px;
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns = "http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation = "http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version = "4.0">
+
+	<display-name>DMV Mystery</display-name>
+	<absolute-ordering/>
+	<description>DMV Mystery by https://alphaomega-it.de</description>
+
+	<servlet>
+		<servlet-name>RestManager</servlet-name>
+		<servlet-class>de.alphaomega.it.dmv.RESTManager</servlet-class>
+		<init-param>
+			<param-name>jakarta.ws.rs.Application</param-name>
+			<param-value>de.alphaomega.it.dmv.RESTManager</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RestManager</servlet-name>
+		<url-pattern>/dmv/*</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>AuthenticationFilter</filter-name>
+		<filter-class>de.alphaomega.it.dmv.filter.AuthenticationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/login/*</url-pattern>
+		<url-pattern>/dmv/login/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>de.alphaomega.it.dmv.init.HibernateSessionListener</listener-class>
+	</listener>
+</web-app>

@@ -1,0 +1,15 @@
+.rounded {
+  border-radius: 22px !important;
+}
+
+.hover_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.img:hover .hover_img {
+  display: inline;
+}
+
